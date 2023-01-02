@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %} {% load bootstrap_tags %}
+
+
+{% block content %}
+<div class="row">
+
+<div class="payment-form col-lg-6 offset-lg-3">
+<h1>Checkout</h1>
+
+
+{% for book in bookings %}
+
+You are booking Windward Paddocks arena at {{book.time}} on {{book.date}}
+<br>
+Total £{{book.total}}
+
+<form method="POST" action="{% url 'addHorse' book.id %}">
+    <div class="form-check">
+    
+        <input class="form-check-input" type="checkbox"  name="extra" id="flexCheckDefault"     {% if book.total == 25 %}checked{%endif%}>
+    
+        <label class="form-check-label" for="flexCheckDefault">
+        Extra Horse
+        </label>
+      </div>
+      {%csrf_token%}
+      <button type="submit" class="btn btn-outline-dark btn-lg">Update</button>
+</form>
+
+{%endfor%}
+
+
+
+
+<form role="form" method="post" id="payment-form" action="{% url 'payment' %}">
+    <legend>Payment Details</legend>
+
+    <div id="credit-card-errors" style="display: none;">
+        <div id="alert-message block-message error" id="stripe-error-message"></div>
+    </div>
+{% comment %} 
+    <div class="form-group col-md-6">
+        {{ order_form | as_bootstrap }}
+    </div>
+
+    <div class="form-group col-md-6">
+        {{ payment_form | as_bootstrap }}
+    </div> {% endcomment %}
+
+    {% csrf_token %}
+    <div class="form-group col-md-12">
+       {% comment %} <span class="total">Total £{{book.total}} </span><br> {% endcomment %}
+        <input class="btn btn-outline-dark btn-lg" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+    </div>
+</form>
+
+{% comment %} name
+email
+telephone
+extra horse - tick box
+total
+payment button
+
+
+
+booking details {% endcomment %}
+
+</div><!--end of payment-->
+</div><!--end of row-->
+{%endblock%}

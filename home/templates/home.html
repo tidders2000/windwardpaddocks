@@ -1,0 +1,324 @@
+
+
+
+{% extends 'base.html' %} {% load bootstrap_tags %}{% load static %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<!--main splash-->
+<div class="row r1">
+<div class="col-md-6 col-lg-5 m-auto content md-pb">
+
+    <h2 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-1">Windward Paddocks</h2>
+    <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-4">Equestrian</h1>
+
+    <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales Dellentesque felis, in
+        dignissim diam eleifend et. </p>
+    <div class="">                <button type="button"   style="--bs-btn-border-width: 2px; width:200px; height:80px;" class="btn btn-outline-dark btn-lg">READ MORE</button></div>
+
+    </div>
+    {% comment %} <a class="" data-bs-toggle="offcanvas" href="#offcanvasExample">  {% endcomment %}
+<!--sidebar-->
+    <div class="col-md-6 col-lg-7 d-none d-md-block">
+        <div class="wrapper">
+            <a class="" data-bs-toggle="offcanvas" href="#offcanvasExample"> <h2 class="link title align-center  display-5 about-link" id="abus"  >ABOUT US</h2></a>
+            <span class="icon1 mbr-iconfont socicon-facebook socicon"></span>
+            <span class="icon2 mbr-iconfont socicon-instagram socicon"></span>
+            <img class="img1 " src="{% static 'stables.png' %}" alt="stables" >
+            <img class="img2" src="{% static 'school_small.png' %}" alt="menange">
+        </div>
+    </div>
+</div>
+
+<section class=" d-none d-md-block">
+<div class-"row">
+
+<div class="col-l-12 grab">
+
+    <img class="img3" src="{% static 'school_large.png' %}" alt="menange">
+
+    <div class="grab-txt">
+        <i class="fa fa-graduation-cap fa-5x icon" aria-hidden="true"></i>
+        <h1 class="grab-h">Fancy A Schooling Session?</h1>
+        <p class="grab-p"> We have a 20x50m menange available for hire either with or without jumps. </p>
+        <a href="/booking/" class="btn btn-outline-warning btn-lg" tabindex="-1" role="button" aria-disabled="true">BOOK NOW</a>
+        </div>
+
+
+    <div>
+
+
+</div>
+
+
+
+
+</section>
+
+<section class="tack d-none d-md-block">
+
+    <div class="row">
+    <div class="col-lg-3">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <div class="main">
+            <div class = "border">
+                <div class = "inner-cutout"> 
+                    <h1 class="knockout">Second Hand <br> Tack Shop<br>        <a href="{% url 'shop'%}" class="btn btn-outline-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">VIEW</a></h1> 
+                </div>
+            </div>
+        </div>
+    </div><!--end of col-->
+        <div class="col-lg-9">
+            <img class="float-end logos-image img-fluid" src="{% static 'shop-logos.png' %}" width="800px"alt="menange">
+        </div>
+
+        {% comment %} <img class="animate thumb" data-animate="bounceIn" data-offset="50" data-duration="1.0s" data-delay="0.1s" src="{% static 'leMieux.png' %}" alt="menange"> {% endcomment %}
+   
+    </div>
+</section>
+<section class="mas-grid d-none d-md-block">
+
+    {% comment %} <div class="row"> {% endcomment %}
+        {% comment %} <h1 class="face_title">Facebook</h1>
+        <div class='row fb_holder '>
+      
+          {% for p in json2.posts.data%}
+          <div class='col s12 m4 sqh fb_sq image_container'>
+      
+            <img src='{{p.full_picture}}' class="fb_pic" width="50px" height="50px" alt='facebook picture'/>
+            <p class='centered'>'{{p.message|truncatechars:50}}'</p>
+            <a href="{{p.permalink_url}}" class="">
+              <div class="overlay">
+                <div class="text"><img class="zi" src="{% static 'images/fuof.png' %}" /></div>
+              </div>
+            </a>
+      
+      
+          </div> {% endcomment %}  
+
+<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 160 }'>
+    {% for p in json2.posts.data%}
+  {% comment %} <div class="grid-item ">      <a href="https://www.facebook.com/Windward-Paddocks-Equestrian-103258279264430" >    <i class="fa fa-facebook-official fa-3x social" aria-hidden="true"></i> </a></div> {% endcomment %}
+  {% if p.full_picture %}
+  <div class="grid-item grid-item--width2 grid-item--height2"><a href="{{p.permalink_url}}"><img src='{{p.full_picture}}' class="fb_pic align-middle" width="150px" height="150px" alt='facebook picture'/></a></div>
+  {%endif%}
+  <div class="grid-item grid-item--height3"><a href="{{p.permalink_url}}">{{p.message}}</a> </div>
+  {% comment %} <div class="grid-item grid-item--height2"></div> {% endcomment %}
+  {% endfor %}
+  {% comment %} <div class="grid-item grid-item--width3"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item grid-item--width2 grid-item--height3"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2 grid-item--height2"></div>
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height3"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--height2"></div> {% endcomment %}
+</div>
+
+</section>
+
+<section class="d-xs-block d-md-none">
+<div class="holder">
+<img class="img-fluid" src="{% static 'school_large.png' %}" alt="stables" >
+<div class="centered">Centered</div>
+</div>
+</section>
+
+<section>
+<div class="holder">
+<img class="img-fluid" src="{% static 'stables.png' %}" alt="stables" >
+
+</div>
+</section>
+
+<section  class="d-xs-block d-md-none">
+<div class="holder">
+<img class="img-fluid" src="{% static 'shop-logos.png' %}" alt="stables" >
+<div class="centered">   
+    <div class = "border">
+        <div class = "inner-cutout"> 
+            <h1 class="knockout">Second Hand <br> Tack Shop<button type="button" class="btn btn-outline-secondary">Secondary</button></h1> 
+      
+    </div>
+</div></div>
+</div>
+</section>
+
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-4">Windward Paddocks</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales Dellentesque felis, in
+            dignissim diam eleifend et. </p>
+      </div>
+     
+    </div>
+  </div>
+
+
+ <!--Section: Contact v.2-->
+<section class="mb-3" id="contact">
+<div class="row">
+    <div class="col-lg-4 address">
+            <h2 class="h1-responsive font-weight-bold text-left my-4">Find us</h2>
+            <p class="text-left w-responsive mx-auto mb-5 form-text"> Windward Paddocks<br>
+                Heckington<br>
+                NG34 9NE<br>
+                07722879314<br>
+                icci bunni offi
+            </P>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9606.288270927796!2d-0.2900261554081695!3d52.99209747849967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48781390ac504da7%3A0x20d7287d62ccbfbf!2sSleaford%20NG34%209NE!5e0!3m2!1sen!2suk!4v1669231621129!5m2!1sen!2suk" class="" width="100%" height="300"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <div class="col-lg-8">
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold  my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-left w-responsive mx-auto mb-5 form-text">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+    <div class="row" >
+
+        <!--Grid column-->
+        <div class="col-md-8 offset-md-2 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" value="Name" class="form-control border-0">
+                            
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" value="Email" class="form-control border-0">
+                            
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" value="Subject" class="form-control border-0  border-bottom">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message"  rows="2" class="form-control border-0 md-textarea">Message</textarea>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                {% csrf_token %}
+
+            <div class="text-center text-md-left">
+                <button type="SUBMIT"   style="--bs-btn-border-width: 2px; width:200px; height:80px;" class="btn btn-outline-dark btn-lg">SEND</button>
+            </div>
+            <div class="status"></div>
+        </div>
+    </form>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        {% comment %} <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>San Francisco, CA 94126, USA</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 01 234 567 89</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>contact@mdbootstrap.com</p>
+                </li>
+            </ul>
+        </div> {% endcomment %}
+        <!--Grid column-->
+
+    </div>
+</div><!--END OF COL-->
+</div><!--endrow-->
+</section>
+<!--Section: Contact v.2-->
+
+{% comment %} <section class="content4 cid-rArHNGGDR4" id="content04-1q">
+
+    
+
+    <img class="img3" src="{% static 'school_large.png' %}" alt="Mobirise">
+    
+
+    <div class="container">
+
+        <div class="row justify-content-md-end">
+            <div class="col-lg-6 col-md-12">
+                <h2 class="mbr-section-title align-right mbr-bold pb-4 mbr-fonts-style display-1">
+
+
+                    <div>Handmade<br>Wood Products</div>
+                </h2>
+
+                <div class="text-wrap">
+                    <p class="mbr-text pb-2 mbr-white align-center mbr-fonts-style display-7">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse metus odio, semper in mi
+                        eget, tempus gravida lacus. Vivamus in cursus lectus. Nullam accumsan turpis erat, nec mollis
+                        purus molestie at. Pellentesque sed ligula elementum, luctus quam ut, feugiat libero. </p>
+                    <div class="link-wrap pt-2">
+                        <h4 class="link align-center mbr-bold mbr-black mbr-fonts-style display-7">
+                            View More</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section> {% endcomment %}
+
+
+
+{% endblock %}

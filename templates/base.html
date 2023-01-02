@@ -1,0 +1,136 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Windward Paddocks Equestrian - Heckington</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/737f24dfdb.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+
+  </head>
+
+<style>
+.container-fluid{
+    background-color:#f1eeea;
+    !important;
+    padding:0;
+
+   
+
+  }
+ nav{
+    background-color:#f1eeea!important; 
+
+ }
+  .navbar{
+      padding-left:70px;
+      padding-right:70px;
+      padding-top:30px;
+      padding-bottom:30px;
+      background-color:#f1eeea!important;
+  }
+  .navbar-nav{
+      width:100%;
+  }
+</style>
+        {% if messages %}
+            <div class="alert alert-success">
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+
+
+        <div class="container-fluid"><!--container for all content-->
+
+
+            <!-- navbar all pages-->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#"><img src ="{% static 'logo.png' %}"class="log"  alt="windward paddocks"/> </a>
+                    <i class="fa fa-facebook-official fa-3x social" aria-hidden="true"></i>
+                    <i class="fa fa-instagram fa-3x social" aria-hidden="true"></i>
+                    
+                    <ul class="navbar-nav justify-content-end">
+                     
+                      <li class="nav-item main-font">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'livery'%}">Livery</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'hire'%}">Hire</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="{% url 'shop'%}">Tack</a>
+                      </li>
+                      {% comment %} <li class="nav-item">
+                        <a class="nav-link ">Blog</a>
+                      </li> {% endcomment %}
+                      <li class="nav-item">
+                        <a class="nav-link "href="/#contact">Contact</a>
+                      </li>
+                    </ul>
+            
+                </div>
+              </nav>
+
+ 
+
+    
+
+  
+            {% block content %} {% endblock %}
+
+        </div><!-- end of container-->
+    
+        <div class="container">
+         
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+              <div class="col-md-4 col-sm-5  d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                  <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2022 Windward Paddocks, Design by ScruffyHorse</span>
+              </div>
+          
+              <ul class="nav col-sm-5 col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+              </ul>
+            </footer>
+     
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="{% static 'js/jquery.scrolla.min.js' %}"></script>
+        <script>
+            
+            $('.animate').scrolla({
+
+            mobile:true,
+            once:true,
+            animateCssVersion: 4
+                     });
+        </script>
+
+    </body>
+    </html>

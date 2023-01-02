@@ -1,0 +1,545 @@
+@font-face {
+    font-family: mulish;
+    src: url(fonts/Mulish-Light.ttf);
+  }
+
+  @font-face {
+    font-family: Reem Kufi;
+    src: url(fonts/ReemKufi-SemiBold.ttf);
+  }
+
+.main-font{
+    font-family:mulish;
+    
+}
+h1{
+  font-family: Reem Kufi;
+  text-transform: uppercase;
+}
+
+h4{
+  font-family: Reem Kufi;
+
+}
+
+/*correct height on booking*/
+
+.booking{
+  min-height: 800px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Reem Kufi;
+  font-size: 40px;
+}
+
+.holder {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.nav-item {
+    font-size: 20px!important;
+    padding-right: 30px;
+    letter-spacing: .2rem;
+}
+
+.img1 {
+    width: 100%;
+    padding-right: 6rem;
+    object-fit: cover;
+    height: 800px;
+    position: relative;
+  }
+
+  .content {
+    padding-left: 6rem;
+    padding-right: 2rem;
+    max-width: 650px;
+    
+  }
+
+  .log{
+    height:80px
+  }
+
+  .img2 {
+    width: 400px;
+    position: absolute;
+    bottom: -300px;
+    /* right: 30px; */
+    right: 50px;
+    width: 400px;
+    box-shadow: 2.5px 4.3px 62px 0 rgba(0, 0, 0, 0.22);
+  }
+
+  .display-5 {
+
+    font-family: mulish, sans-serif;
+    font-size: 1.6rem;
+
+  }
+
+  .title{
+    position: absolute;
+    right: 0rem;
+    transform: rotate(90deg);
+    transform-origin: top right;
+    top: 26rem;
+    padding: 0;
+    padding-top: 20px;
+    cursor: pointer;
+    animation: mover 1s linear infinite;
+    z-index: 999;
+
+  }
+
+  body{
+    background:#f1eeea;
+  }
+
+  .display-1 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 4.2rem;
+  }
+
+
+.display-4 {
+  font-family: mulish, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.img3 {
+    width: 70%;
+    padding-right: 6rem;
+    object-fit: cover;
+ 
+    position:absolute;
+  }
+
+  .r1{
+      padding-bottom: 300px;
+  }
+
+  .grab{
+      height:900px;
+    
+      position: relative;
+  }
+  .grab-txt{
+    position: absolute;
+    bottom: 350px;
+    right: 206px;
+    height: 400px;
+    width: 601px;
+    background: linear-gradient(to bottom, #003366 5%, #006666 100%);
+    text-align: center;
+
+  }
+
+  .icon{
+      color:white;
+      padding:15px;
+  }
+
+  .grab-h{
+      color:goldenrod;
+      font-family: 'Reem Kufi', sans-serif;
+      animation: flicker 1.5s infinite alternate;  
+  }
+
+  .grab-p{
+      font-size: 30px;
+      font-family: mulish, sans-serif;
+      color: white;
+  }
+
+  @keyframes mover {
+ from {color:black;}
+ to {color:silver;}
+}
+
+
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- masonary---- */
+.mas-grid{
+  padding:150px;
+
+  padding-top:250px!important
+}
+.grid {
+  background: #EEE;
+  max-width: 1200px;
+  
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 160px;
+  height: 120px;
+  float: left;
+  background: grey;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+}
+
+.grid-item--width2 { width: 320px; }
+.grid-item--width3 { width: 480px; }
+.grid-item--width4 { width: 640px; }
+
+.grid-item--height2 { height: 200px; }
+.grid-item--height3 { height: 260px; }
+.grid-item--height4 { height: 360px; }
+
+
+
+.tack{
+
+  padding-top:100px;
+}
+
+.animate__animated.animate__bounce {
+  --animate-duration: 5s;
+}
+
+
+.marq{
+  margin-right:100px;
+}
+
+.thumb{
+  height:70px;
+  width:70px;
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
+
+
+
+
+
+
+/* html{
+	background-color:#ff6f69;
+	background: radial-gradient(#ff6f69, #ff8b87); */
+
+/*	background-image:url('https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1479854258%2Fkahaluu-bay-kona-big-island-hawaii-WRLDSNST1122.jpg%3Fitok%3DSFMX3uUf&w=800&q=85');
+	background-repeat: no-repeat;
+    background-size: 100%;
+	background-position:50% 50%;*/
+/* } */
+.logos-image{
+  padding-right: 70px;
+}
+
+.main{
+  position:absolute;
+  left:-250px;
+  margin-top: 300px!important;
+}
+.border{
+	padding: 5px;
+		background: linear-gradient(110deg, #0B515C 23%, rgba(0, 0, 0, 0) 43%), linear-gradient(110deg, rgba(11,81,92,0.9) 34%, rgba(11,81,92,0.5) 34%);
+	background-size: 400% 400%;
+	/* height: 400px; */
+	background-position: 25% 50%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+}
+.inner-cutout{
+	padding: 40px 0;
+	display: block;
+	background-color:#ff6f69;/*#ff6f69*/
+		
+	margin: 2%;
+	padding-bottom: 40px;
+	height: 300px;
+	background:#f1eeea;
+	 background-size: 300%;
+	background-position:50% 50%;
+
+}
+.knockout {
+	
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Pacifico', cursive;
+	font-size:40pt;
+	color: blue;
+	color: #fff;
+	background: linear-gradient(110deg, #0B515C 23%, rgba(0, 0, 0, 0) 43%), linear-gradient(110deg, rgba(11,81,92,0.9) 34%, rgba(11,81,92,0.5)  34%);
+	background-size: 400%;
+	 -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.knockout{
+		animation: Gradient 5s ease infinite;
+		-webkit-animation: Gradient 15s ease infinite;
+		-moz-animation: Gradient 5s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 30% 50%
+	}
+	50% {
+		background-position: 25% 50%
+	}
+	100% {
+		background-position: 30% 0%
+	}
+	
+}
+
+
+
+.main{
+	width: 500px;
+	height: 800px;
+	margin-left: 40%;
+	margin-right:40%;
+	margin-top: 10%;
+}
+
+
+.display-2 {
+  font-family: 'Reem Kufi';
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.display-5 {
+  font-family: 'Muli', sans-serif;
+  font-size: 1.6rem;
+  text-align: left;
+}
+.form-control {
+  background-color:#f1eeea!important ;
+  border-bottom: grey 3px solid!important;
+  border-radius: 0!important;
+  font-family: mulish;
+  font-size: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.form-text{
+ 
+    font-size: 25px;
+    width: 80%;
+    font-family: mulish;
+
+}
+
+footer{
+margin-top: 200px;
+background:#f1eeea;
+}
+
+.social{
+  color: grey;
+  margin-left: 10px;;
+}
+
+.grid-item img{
+display: block;
+margin: auto;
+margin-top: 6%;
+border-radius: 5px;
+}
+
+.grid-item{
+  text-align: center;
+  font-family:mulish;
+  font-size: 18px;
+
+  margin: auto;
+ 
+  padding: 10px;
+
+overflow: hidden;
+
+}
+
+.grid-item i{
+  margin-top: 10%;
+  color:#1A77F2;
+}
+
+.grid-item a{
+text-decoration: none;
+color: cornsilk;
+}
+
+@media screen and (max-width: 500px) {
+  .r1 {
+    padding-bottom: 20px;
+}
+.content{
+  padding-left: 3rem;
+}
+
+form{
+  padding:5px;
+}
+.text-muted{
+  font-size: 11px;
+}
+.inner-cutout{
+  width: 350px;
+  margin-right: 15px;
+}
+}
+
+@media screen and (max-width: 1200px)  and (min-width:980px) {
+  .img2{
+    bottom: -200px;
+    right: 200px;
+  
+  }
+  .log{
+    height:50px;
+  }
+  .navbar-nav{
+    margin-right: 30px!important;
+  }
+
+  .img3{
+    width: 80%;
+  }
+
+  .grab-txt{
+    bottom:150px;
+  }
+  .logos-image{
+    padding-right: 150px;
+  }
+}
+
+@media screen and (max-width: 980px)  and (min-width:900px) {
+  .img2{
+    bottom: 510px;
+  
+  }
+  .img3{
+  width:100%;
+  margin-left: 20px;
+}
+  
+}
+@media screen and (max-width: 900px)  and (min-width:600px) {
+.img2{
+  bottom: 110px;
+ }
+}
+
+@media screen and (max-width: 1000px) {
+
+.img3{
+  width:100%;
+  margin-left: 20px;
+}
+
+.grab-txt{
+  bottom: 100px;
+    right: 26px;
+}
+
+.logos-image{
+  padding-left:50px;
+}
+}
+
+@media screen and (max-width: 300px)   {
+
+ 
+  .inner-cutout {
+    width:220px;
+  }
+
+  .knockout{
+    font-size:30pt!important;
+  }
+
+  .display-1{
+    font-size: 3rem;
+  }
+
+}
+
+/* pages */
+
+.p-left,.p-right{
+
+  padding:50px;
+}
+
+.ptext{
+  font-family: mulish, sans-serif;
+  font-size: 1.6rem;
+
+}
+
+#auction-nudge-items{
+  padding-right:10px;
+}
+
+.sidebar{
+  padding-left:60px;
+   font-family: mulish, sans-serif;
+  font-size: 1.6rem;
+}
+.address{
+  padding-left:50px;
+}
+
+#contact{
+  padding-top:100px;
+}
+
+/*checkout*/
+.payment-form{
+ padding-left: 20px;
+}
+
+.payment-form h1{
+  margin-bottom: 50px;
+}
+
+.payment-form form{
+  margin-top: 5px;
+}
