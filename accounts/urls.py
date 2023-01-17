@@ -27,8 +27,8 @@ urlpatterns = [
     path('emailList', emailList, name="emailList"),
 
    
-    path('reset', include('password_reset.urls')),
-    path('webpush/', include('webpush.urls')),
+    # path('reset', include('password_reset.urls')),
+    # path('webpush/', include('webpush.urls')),
     # path('test', test, name='test'),
     # path(
     #     'sw.js',

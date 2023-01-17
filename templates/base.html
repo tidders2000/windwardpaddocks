@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Windward Paddocks Equestrian - Heckington</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/737f24dfdb.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
-
+  {% block head %}{% endblock %}
   </head>
 
 <style>
@@ -64,8 +64,8 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <a class="navbar-brand" href="#"><img src ="{% static 'logo.png' %}"class="log"  alt="windward paddocks"/> </a>
-                    <i class="fa fa-facebook-official fa-3x social" aria-hidden="true"></i>
-                    <i class="fa fa-instagram fa-3x social" aria-hidden="true"></i>
+                   <a href="https://www.facebook.com/Windward-Paddocks-Equestrian-103258279264430"> <i class="fa fa-facebook-official fa-3x social" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/windwardpaddocks/"><i class="fa fa-instagram fa-3x social" aria-hidden="true"></i></a>
                     
                     <ul class="navbar-nav justify-content-end">
                      

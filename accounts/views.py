@@ -33,10 +33,8 @@ def login(request):
                 auth.login(request=request, user=user)
                 instance = Profile.objects.get(pk=request.user.pk)
                 messages.error(request, "You have successfully logged in")
-                if instance.wizard == True:
-                    print("True")
-                    return redirect(reverse('wizard_addhorse'))
-                return redirect(reverse('home'))
+               
+                return redirect(reverse('admin_dashboard'))
             else:
 
                 messages.error(request, "oops")
@@ -90,7 +88,7 @@ def logout(request):
     """Log the user out"""
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
-    return redirect('index')
+    return redirect('home')
 
 
 @login_required

@@ -2,7 +2,13 @@
 
 
 {% extends 'base.html' %} {% load bootstrap_tags %}{% load static %}
+{% block head %}
 
+<title>Windward Paddocks Equestrian - Heckington</title>
+<meta name="author" content="Windward Paddocks Equestrian">
+<meta name="description" content="Equestrian Centre near Heckington offering full and part livery  and Equestrian arena hire">
+
+{% endblock %}
 {% block content %}
 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 <!--main splash-->
@@ -10,12 +16,11 @@
 <div class="col-md-6 col-lg-5 m-auto content md-pb">
 
     <h2 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-1">Windward Paddocks</h2>
-    <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-4">Equestrian</h1>
+    {% comment %} <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-2">Equestrian</h1> {% endcomment %}
 
     <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales Dellentesque felis, in
-        dignissim diam eleifend et. </p>
-    <div class="">                <button type="button"   style="--bs-btn-border-width: 2px; width:200px; height:80px;" class="btn btn-outline-dark btn-lg">READ MORE</button></div>
+        Lincolnshire equestrian centre providing Full, Part and DIY livery as well as Arena hire</p>
+    <div class="">      <a href="/livery/"   class="btn btn-outline-dark btn-lg  p-4 ">MORE</a></div>
 
     </div>
     {% comment %} <a class="" data-bs-toggle="offcanvas" href="#offcanvasExample">  {% endcomment %}
@@ -26,7 +31,8 @@
             <span class="icon1 mbr-iconfont socicon-facebook socicon"></span>
             <span class="icon2 mbr-iconfont socicon-instagram socicon"></span>
             <img class="img1 " src="{% static 'stables.jpg' %}" alt="stables" >
-            <img class="img2" src="{% static 'school_small.png' %}" alt="menange">
+          
+            <img class="img2 d-none d-lg-block " src="{% static 'school_small.png' %}" alt="menange">
         </div>
     </div>
 </div>
@@ -37,7 +43,7 @@
 <div class="col-l-12 grab">
 
     <img class="img3" src="{% static 'school_large.jpg' %}" alt="menange">
-
+ 
     <div class="grab-txt">
         <i class="fa fa-graduation-cap fa-5x icon" aria-hidden="true"></i>
         <h1 class="grab-h">Fancy A Schooling Session?</h1>
@@ -131,15 +137,16 @@
 
 <section class="d-xs-block d-md-none">
 <div class="holder">
-<img class="img-fluid" src="{% static 'school_large.png' %}" alt="stables" >
-<div class="centered">Centered</div>
+<img class="img-fluid" src="{% static 'school_large.jpg' %}" alt="stables" >
+<div class="centered d-sm-block d-md-none"><a href="/hire/">Hire</a></div>
+
 </div>
 </section>
 
 <section>
 <div class="holder">
 <img class="img-fluid" src="{% static 'stables.jpg' %}" alt="stables" >
-
+<div class="centered d-sm-block d-md-none"><a href="/livery/">Livery</a></div>
 </div>
 </section>
 
@@ -160,14 +167,18 @@
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-4">Windward Paddocks</h1>
+        {% comment %} <h1 class="mbr-section-title align-left mbr-bold pb-4 mbr-fonts-style display-4">Windward Paddocks Equestrian Centre</h1> {% endcomment %}
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div>
+          <h2> Welcome to Windward Paddocks Equestrian Centre</h2><br>
         <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales Dellentesque felis, in
-            dignissim diam eleifend et. </p>
+            Welcome to the Windward Padodcks Equestrian Centre. We are a small family run business in Heckington. </p>
+            <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
+            We took over Windward Paddocks in early 2022 with the vision to restore it to a quality equestrian centre for local riders. We are keen to provide a small friendly yard providingan enjoyable and safe place for riders and horses alike.</p>
+            <p class="mbr-text pb-4 align-left mbr-fonts-style display-5">
+            We have been involved with horses  for many years and that passion has paased to our children. The four of us are all riders competing in jumping and dressage. </p>
       </div>
      
     </div>
@@ -188,9 +199,9 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9606.288270927796!2d-0.2900261554081695!3d52.99209747849967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48781390ac504da7%3A0x20d7287d62ccbfbf!2sSleaford%20NG34%209NE!5e0!3m2!1sen!2suk!4v1669231621129!5m2!1sen!2suk" class="" width="100%" height="300"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-8 address">
     <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold  my-4">Contact us</h2>
+    <h2 class="h1-responsive font-weight-bold text-left my-4">Contact us</h2>
     <!--Section description-->
     <p class="text-left w-responsive mx-auto mb-5 form-text">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
         a matter of hours to help you.</p>
