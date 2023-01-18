@@ -98,9 +98,9 @@ DATABASES = {
         'PASSWORD':  os.environ.get("COCKROACH_DB_PW"),
         'HOST': os.environ.get("COCKROACH_HOST"),
         'PORT': '26257',
-        'OPTIONS': {
-            'sslmode': 'verify-full'
-        },
+        # 'OPTIONS': {
+        #     'sslmode': 'verify-full'
+        # },
       
     },
 }
