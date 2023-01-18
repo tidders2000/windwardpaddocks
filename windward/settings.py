@@ -95,8 +95,8 @@ DATABASES = {
         'ENGINE': 'django_cockroachdb',
         'NAME': 'Windward',
         'USER': 'simon',
-        'PASSWORD':  os.environ.get("cockroachDB"),
-        'HOST': os.environ.get("coackroachHost"),
+        'PASSWORD':  os.environ.get("COCKROACH_DB_PW"),
+        'HOST': os.environ.get("COCKROACH_HOST"),
         'PORT': '26257',
       
     },
