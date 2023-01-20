@@ -183,3 +183,5 @@ EMAIL_USE_TLS = True
 STRIPE_PUBLISHABLE_KEY =  os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 ACCOUNT_NAME = 'Facebook'
+
+FB_API = os.getenv('FB_API')
