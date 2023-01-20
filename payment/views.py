@@ -1,17 +1,23 @@
 from contextlib import redirect_stderr
 from django.conf import settings
-
+from django.core.mail import send_mail
 from django.shortcuts import render,redirect,get_object_or_404
 from booking.models import Booking
 import os
 import stripe
 from django.http import JsonResponse
-
+from django.conf import settings
 from .forms import MakePaymentForm, OrderForm
 # Create your views here.
 
 def success(request):
-
+    booking = request.session['booking_pk']
+    bookings = Booking.objects.get(pk=booking) 
+    message = "You have booked the arena for:" 
+    sender = bookings.user_email
+    name = bookings.user_name
+    subject = "Windward Paddocks Booking"
+    send_mail(subject, message + '  from:'+ name, sender, ['contact@windwardpaddocks.com'], fail_silently=False)
     return render(request,'success.html')
 
 def cancel(request):
@@ -34,7 +40,8 @@ def payment(request):
 
 
  
-  stripe.api_key = 'sk_test_ObX7cQmWso8lEyp8JiaPWNWs002uWXu3vl'
+  stripe.api_key = settings.STRIPE_TEST_MODE
+  print(settings.STRIPE_TEST_MODE)
   if settings.DEBUG:
             domain = "http://127.0.0.1:8000"
   checkout_session = stripe.checkout.Session.create(
