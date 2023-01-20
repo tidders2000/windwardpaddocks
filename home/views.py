@@ -15,7 +15,8 @@ def home(request):
      subject = request.POST.get('subject')
      send_mail(subject, message + '  from:'+ name, sender, ['contact@windwardpaddocks.com'], fail_silently=False)
 
-    api_key =settings.FB_API
+    api_key= settings.FB_API
+    print(settings.FB_API)
     h = requests.get(
          "https://graph.facebook.com/v15.0/me?fields=posts%7Bmessage%2Cfull_picture%2Cpermalink_url%7D&access_token="+api_key)
     json2 = h.json()
