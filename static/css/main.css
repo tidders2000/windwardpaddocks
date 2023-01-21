@@ -278,7 +278,7 @@ body { font-family: sans-serif; }
   left:-250px;
   margin-top: 300px!important;
 }
-.border{
+.border-home{
 	padding: 5px;
 		background: linear-gradient(110deg, #0B515C 23%, rgba(0, 0, 0, 0) 43%), linear-gradient(110deg, rgba(11,81,92,0.9) 34%, rgba(11,81,92,0.5) 34%);
 	background-size: 400% 400%;
@@ -583,7 +583,9 @@ margin-left: 10px;
 
 /*checkout*/
 .payment-form{
- padding-left: 20px;
+ 
+ background-color: white;
+ padding: 50px;
 }
 
 .payment-form h1{

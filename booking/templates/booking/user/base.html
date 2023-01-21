@@ -8,25 +8,90 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+  <script src="https://kit.fontawesome.com/737f24dfdb.js" crossorigin="anonymous"></script>
 	<title>{% block title%}Booking{% endblock title%}</title>
-
+  <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<!-- Custom stlylesheet -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     {% block extra_css %}
     {% endblock extra_css %}
 </head>
+<style>
+.container-fluid{
+    background-color:#f1eeea;
+    !important;
+    padding:0;
 
-<body>
+   
+
+  }
+ nav{
+    background-color:#f1eeea!important; 
+
+ }
+  .navbar{
+      padding-left:70px;
+      padding-right:70px;
+      padding-top:30px;
+      padding-bottom:30px;
+      background-color:#f1eeea!important;
+  }
+  .navbar-nav{
+      width:100%;
+  }
+</style>
+
+<body style="background-color:#f0eee9;">
+     <!-- navbar all pages-->
+     <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#"><img src ="{% static 'logo.png' %}"class="log"  alt="windward paddocks"/> </a>
+         <a href="https://www.facebook.com/Windward-Paddocks-Equestrian-103258279264430"> <i class="fa fa-facebook-official fa-3x social" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/windwardpaddocks/"><i class="fa fa-instagram fa-3x social" aria-hidden="true"></i></a>
+          
+          <ul class="navbar-nav justify-content-end">
+           
+            <li class="nav-item">
+              <a class="nav-link "  href="{% url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'livery'%}">Livery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'hire'%}">Hire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'shop'%}">Tack</a>
+            </li>
+            {% comment %} <li class="nav-item">
+              <a class="nav-link ">Blog</a>
+            </li> {% endcomment %}
+            <li class="nav-item">
+              <a class="nav-link "href="/#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="{% url 'login'%}">Login</a>
+            </li>
+          </ul>
+  
+      </div>
+    </nav>
+
+
 	
 	<div id="booking" class="section"
-        style="background-image: url('{% static booking_bg %}');">
-		<div class="section-center">
+  
+		<div class="section-center" style="background-color:#f0eee9;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">

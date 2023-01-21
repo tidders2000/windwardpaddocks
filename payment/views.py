@@ -14,9 +14,12 @@ def success(request):
     booking = request.session['booking_pk']
     bookings = Booking.objects.get(pk=booking) 
     message = "You have booked the arena for:" 
+    date = bookings.date.strftime("%m/%d/%Y")
+    time=bookings.time.strftime("%H:%M:%S")
     sender = bookings.user_email
     name = bookings.user_name
     subject = "Windward Paddocks Booking"
+    send_mail(subject, message + date+time+'  from:'+ name, sender, [sender], fail_silently=False)
     send_mail(subject, message + '  from:'+ name, sender, ['contact@windwardpaddocks.com'], fail_silently=False)
     return render(request,'success.html')
 

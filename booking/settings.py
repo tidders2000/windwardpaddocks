@@ -8,6 +8,6 @@ BOOKING_DISABLE_URL = getattr(settings, 'BOOKING_DISABLE_URL', "/")
 
 BOOKING_BG = getattr(settings, 'BOOKING_BG', "img/booking_bg.jpg")
 
-BOOKING_TITLE = getattr(settings, 'BOOKING_TITLE', "Booking")
+BOOKING_TITLE = getattr(settings, 'BOOKING_TITLE', "Arena Hire")
 
 BOOKING_DESC = getattr(settings, 'BOOKING_DESC', "Make your booking easy and fast with us.")
