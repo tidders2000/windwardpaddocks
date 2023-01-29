@@ -46,7 +46,7 @@ def payment(request):
   stripe.api_key = settings.STRIPE_TEST_MODE
   print(settings.STRIPE_TEST_MODE)
   if settings.DEBUG:
-            domain = "https://windwardpaddocks.com"
+            domain = "https://www.windwardpaddocks.com"
   checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
@@ -61,7 +61,7 @@ def payment(request):
         )
   return redirect(checkout_session.url, code=303)
 
- 
+ https://windwardpaddocks.com/payment/success/
 
 def checkout(request):
     payment_form = MakePaymentForm()
