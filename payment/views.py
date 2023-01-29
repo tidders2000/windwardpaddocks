@@ -61,7 +61,7 @@ def payment(request):
         )
   return redirect(checkout_session.url, code=303)
 
- https://windwardpaddocks.com/payment/success/
+
 
 def checkout(request):
     payment_form = MakePaymentForm()
