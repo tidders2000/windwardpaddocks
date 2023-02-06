@@ -36,15 +36,15 @@ def payment(request):
   bookings = Booking.objects.get(pk=booking) 
   print(bookings.user)
   if bookings.total < 24.99:
-      price='price_1MLlG3JosIiO9G3w3v1MAXgn'
+      price='price_1MYbPYJosIiO9G3wzhmjyhL5'
   else:
-      price="price_1MLlHdJosIiO9G3wMMRXsurs"
+      price="price_1MYbRKJosIiO9G3wEsln9Gj6"
 
 
 
  
   stripe.api_key = settings.STRIPE_TEST_MODE
-  print(settings.STRIPE_TEST_MODE)
+  print(settings.STRIPE_SECRET_KEY)
   if settings.DEBUG:
             domain = "https://www.windwardpaddocks.com"
   checkout_session = stripe.checkout.Session.create(
