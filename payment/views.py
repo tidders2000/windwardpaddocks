@@ -43,8 +43,8 @@ def payment(request):
 
 
  
-  stripe.api_key = settings.STRIPE_TEST_MODE
-  print(settings.STRIPE_SECRET_KEY)
+  stripe.api_key = settings.STRIPE_SECRET_KEY
+ 
   if settings.DEBUG:
             domain = "https://www.windwardpaddocks.com"
   checkout_session = stripe.checkout.Session.create(
